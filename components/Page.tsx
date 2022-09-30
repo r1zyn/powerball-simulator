@@ -7,16 +7,16 @@ import styles from "../styles/Page.module.css";
 
 export type PageProps = PropsWithChildren<MetaProps>;
 
-export const Page: NextComponent<PageProps> = (props: PageProps): JSX.Element => {
+export const Page: NextComponent<PageProps> = (
+    props: PageProps
+): JSX.Element => {
     return (
         <Fragment>
             <Meta {...props} />
 
             <Header />
 
-            <main className={styles.main}>
-                {props.children}
-            </main>
+            <main className={styles.main}>{props.children}</main>
         </Fragment>
     );
 };

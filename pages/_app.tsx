@@ -18,7 +18,7 @@ function App({ Component, pageProps }: AppProps) {
             <Component {...pageProps} />
             <ScrollButton />
         </ThemeProvider>
-    )
+    );
 }
 
 export default App;

@@ -1,9 +1,9 @@
 import type { PowerballData } from "../lib/types";
 
 /**
- * Matches the file type of a file when given the file name. 
+ * Matches the file type of a file when given the file name.
  * @param {string} filename The file name
- * @returns 
+ * @returns
  */
 export function fileType(filename: string): string {
     const match: RegExpMatchArray | null = filename.match(/(\.[a-z]{3,})$/g);
@@ -12,7 +12,7 @@ export function fileType(filename: string): string {
 }
 
 const lottoNumbers: number[][] = [];
-const finalLottoNumbers: { correct: boolean, value: number }[][] = [];
+const finalLottoNumbers: { correct: boolean; value: number }[][] = [];
 const divisions: number[] = [0, 25111111, 35771, 1270, 110, 55, 41, 15];
 const winningLine: number[] = [];
 
@@ -33,7 +33,7 @@ export function getPowerballData(): PowerballData {
         finalLottoNumbers,
         winningLine,
         totalWinnings
-    }
+    };
 }
 
 /**
@@ -52,37 +52,36 @@ export function generateDivisions(): void {
                     finalLottoNumbers[i][j] = {
                         correct: true,
                         value: lottoNumbers[i][j]
-                    }
+                    };
                 }
-            }
-            else if (j === 6) {
+            } else if (j === 6) {
                 if (lottoNumbers[i][j] == bonusball) {
                     hasBonusball = true;
                     finalLottoNumbers[i][j] = {
                         correct: true,
                         value: lottoNumbers[i][j]
-                    }
+                    };
                 }
-            }
-            else if (j === 7) {
+            } else if (j === 7) {
                 if (lottoNumbers[i][j] == powerball) {
                     hasPowerball = true;
                     finalLottoNumbers[i][j] = {
                         correct: true,
                         value: lottoNumbers[i][j]
-                    }
+                    };
                 }
             } else {
                 finalLottoNumbers[i][j] = {
                     correct: false,
                     value: lottoNumbers[i][j]
-                }
+                };
             }
         }
 
         switch (correctNumbers) {
             case 6:
-                if (hasPowerball) totalWinnings += divisions[1]; break;
+                if (hasPowerball) totalWinnings += divisions[1];
+                break;
             case 5:
                 if (hasPowerball) {
                     if (hasBonusball) totalWinnings += divisions[2];
@@ -105,7 +104,8 @@ export function generateDivisions(): void {
 
                 break;
             default:
-                totalWinnings += divisions[0]; break;
+                totalWinnings += divisions[0];
+                break;
         }
 
         correctNumbers = 0;
@@ -145,7 +145,5 @@ export function generateWinningLine(): void {
  * @param {number} max The maximum number (exlusive)
  */
 export function randomNumber(min: number, max: number): number {
-    return Math.floor(
-        Math.random() * (max - min) + min
-    )
+    return Math.floor(Math.random() * (max - min) + min);
 }
