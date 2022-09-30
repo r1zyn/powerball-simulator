@@ -1,0 +1,350 @@
+.header-container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 1rem;
+    max-width: 1024px;
+    overflow: hidden;
+    height: calc(100vh - 4rem);
+}
+
+.intro-container {
+    padding: 40px 0 50px;
+}
+
+.title {
+    font-weight: 800;
+    font-size: 48px;
+    letter-spacing: -.06em;
+    line-height: 1.2;
+    margin: 0 0 30px;
+}
+
+.title-br-mobile {
+    display: block;
+}
+
+.title-br-desktop {
+    display: none;
+}
+
+.description {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.6;
+    letter-spacing: -.02em;
+    color: var(--accents-5);
+    margin: 0 0 40px;
+}
+
+.description-br {
+    display: none;
+}
+
+.main-button {
+    margin-bottom: 30px;
+}
+
+.button-spacer {
+    display: inline-block;
+    padding: 10px;
+}
+
+.blue-btn {
+    background: #0070f3;
+    color: white;
+    -webkit-box-shadow: 0 4px 14px 0 rgb(0 118 255 / 39%);
+    -moz-box-shadow: 0 4px 14px 0 rgba(0, 118, 255, .39);
+    box-shadow: 0 4px 14px 0 rgb(0 118 255 / 39%);
+    margin: 0;
+    padding: 0 3.5rem;
+    height: 2.81rem;
+    line-height: 2.8rem;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    border-radius: 7px;
+    position: relative;
+    display: -webkit-inline-box;
+    display: -webkit-inline-flex;
+    display: -moz-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -moz-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    cursor: pointer;
+    text-decoration: none;
+    border: none;
+    font-size: inherit;
+    line-height: inherit;
+    -webkit-transition: background.2s ease, color.2s ease, box-shadow.2s ease;
+    -moz-transition: background.2s ease, color.2s ease, box-shadow.2s ease;
+    -o-transition: background.2s ease, color.2s ease, box-shadow.2s ease;
+    transition: background.2s ease, color.2s ease, box-shadow.2s ease;
+    outline: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    font-weight: 400;
+    -webkit-touch-callout: none;
+    touch-action: pan-y;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.blue-btn:hover {
+    background: #0070f3;
+    -webkit-box-shadow: 0 6px 20px rgb(0 118 255 / 23%);
+    -moz-box-shadow: 0 6px 20px rgba(0, 118, 255, .23);
+    box-shadow: 0 6px 20px rgb(0 118 255 / 23%);
+}
+
+.white-btn {
+    background: #fff;
+    color: #696969;
+    -webkit-box-shadow: 0 4px 14px 0 rgb(0 0 0 / 10%);
+    -moz-box-shadow: 0 4px 14px 0 rgba(0, 0, 0, .1);
+    box-shadow: 0 4px 14px 0 rgb(0 0 0 / 10%);
+    margin: 0;
+    padding: 0 3.5rem;
+    height: 2.81rem;
+    line-height: 2.8rem;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    border-radius: 7px;
+    position: relative;
+    display: -webkit-inline-box;
+    display: -webkit-inline-flex;
+    display: -moz-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -moz-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    cursor: pointer;
+    text-decoration: none;
+    border: none;
+    font-size: inherit;
+    line-height: inherit;
+    -webkit-transition: background.2s ease, color.2s ease, box-shadow.2s ease;
+    -moz-transition: background.2s ease, color.2s ease, box-shadow.2s ease;
+    -o-transition: background.2s ease, color.2s ease, box-shadow.2s ease;
+    transition: background.2s ease, color.2s ease, box-shadow.2s ease;
+    outline: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    font-weight: 400;
+    -webkit-touch-callout: none;
+    touch-action: pan-y;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.white-btn:hover {
+    background: rgba(255, 255, 255, .9);
+    -webkit-box-shadow: 0 6px 20px rgb(93 93 93 / 23%);
+    -moz-box-shadow: 0 6px 20px rgba(93, 93, 93, .23);
+    box-shadow: 0 6px 20px rgb(93 93 93 / 23%);
+}
+
+.links {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -moz-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    padding-bottom: 2rem;
+}
+
+.link {
+    padding: 0 0.5rem;
+    -webkit-touch-callout: none;
+    touch-action: pan-y;
+    -webkit-tap-highlight-color: transparent;
+    color: #0074de;
+    text-decoration: none;
+    transition: color .2s ease;
+}
+
+.license {
+    color: var(--accents-5);
+}
+
+.github {
+    position: relative;
+    display: -webkit-inline-box;
+    display: -webkit-inline-flex;
+    display: -moz-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -moz-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    cursor: pointer;
+    text-decoration: none;
+    padding: 0.25rem 0.5rem;
+    margin: -0.25rem -0.5rem;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    border-radius: 7px;
+    color: #0070f3;
+    background-color: transparent;
+    border: none;
+    font-size: inherit;
+    line-height: inherit;
+    -webkit-transition: background.2s ease, color.2s ease, box-shadow.2s ease;
+    -moz-transition: background.2s ease, color.2s ease, box-shadow.2s ease;
+    -o-transition: background.2s ease, color.2s ease, box-shadow.2s ease;
+    transition: background.2s ease, color.2s ease, box-shadow.2s ease;
+    outline: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    font-weight: 400;
+    -webkit-touch-callout: none;
+    touch-action: pan-y;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.github:hover {
+    color: #0070f3;
+    background: rgba(0, 118, 255, .1);
+}
+
+@media screen and (min-width: 500px) {
+    .title-br-mobile {
+        display: none;
+    }
+
+    .title-br-desktop {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .header-container {
+        height: auto;
+    }
+}
+
+@media screen and (min-width: 780px) {
+    .intro-container {
+        padding: 60px 0 0;
+    }
+
+    .title {
+        font-size: 70px;
+        line-height: 1.1;
+        letter-spacing: -.05em;
+    }
+}
+
+@media screen and (max-width: 960px) {
+    .header-container {
+        padding: 0 2rem;
+    }
+}
+
+.simulation-container {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    overflow: hidden;
+}
+
+.info {
+    height: 100%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    text-align: left;
+    padding-left: 5rem;
+    padding-right: 5rem;
+}
+
+.simulation {
+    height: 100%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.simulation > canvas {
+    height: 100%;
+    width: 100%;
+}
+
+@media screen and (max-width: 870px) {
+    .info {
+        width: 100%;
+        padding-left: 2.5rem;
+        padding-right: 2.5rem;
+        align-items: center;
+        text-align: center;
+    }
+
+    .simulation {
+        width: 100%;
+    }
+}
+
+.info-title {
+    font-weight: 800;
+    font-size: 48px;
+    letter-spacing: -.02em;
+    line-height: 1.2;
+    margin: 0 0 30px;
+}
+
+.info-description {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.6;
+    letter-spacing: -.02em;
+    color: var(--accents-5);
+    margin: 0 0 40px;
+}

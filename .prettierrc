@@ -1,0 +1,11 @@
+{
+    "arrowParens": "always",
+    "bracketSameLine": true,
+    "bracketSpacing": true,
+    "singleQuote": false,
+    "tabWidth": 4,
+    "trailingComma": "none",
+    "quoteProps": "preserve",
+    "semi": true,
+    "parser": "typescript"
+}
