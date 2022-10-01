@@ -13,13 +13,13 @@
     height: 2.5rem;
 	border-radius: 0.375rem;
     cursor: pointer;
-    background-color: black;
+    background-color: var(--scroll-btn);
 }
 
 .scroll-top-icon {
     margin: auto;
     padding: auto;
-    color: #ffffff;
+    color: var(--scroll-icon);
     height: 0.75rem;
 }
 

@@ -11,8 +11,25 @@ export function fileType(filename: string): string {
     return match[0].slice(1, match[0].length - 1);
 }
 
+/**
+ * Scrolls the page to the element with the matchig id.
+ * @param {string} id The id of the element 
+ */
+export function scrollToElement(id: string): void {
+    const element: HTMLElement | null =
+        document.getElementById(
+            id
+        );
+
+    if (element)
+        window.scrollTo({
+            top: element.offsetTop,
+            behavior: "smooth"
+        });
+}
+
 const lottoNumbers: number[][] = [];
-const finalLottoNumbers: { correct: boolean; value: number }[][] = [];
+const finalLottoNumbers: { correct: boolean; value: number; }[][] = [];
 const divisions: number[] = [0, 25111111, 35771, 1270, 110, 55, 41, 15];
 const winningLine: number[] = [];
 

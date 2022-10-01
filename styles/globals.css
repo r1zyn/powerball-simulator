@@ -13,7 +13,13 @@
     --background: #ffffff;
     --theme-bg: var(--accents-2);
     --track-bg: #f1f1f1;
-    --scrollbar-bg: #1a1a1a;
+    --scrollbar-bg: #fafafa;
+    --footer-bg: #fafafa;
+    --footer-text: #666;
+    --text-hover: #111;
+    --github-hover: rgba(0, 118, 255, .1);
+    --scroll-btn: black;
+    --scroll-icon: white;
 }
 
 [data-theme="dark"] {
@@ -22,6 +28,12 @@
     --track-bg: var(--accents-8);
     --scrollbar-bg: var(--accents-1);
     --accents-5: var(--accents-2);
+    --footer-bg: black;
+    --footer-text: white;
+    --text-hover: var(--accents-3);
+    --github-hover: rgba(61, 146, 243, 0.342);
+    --scroll-btn: white;
+    --scroll-icon: black;
 }
 
 html,

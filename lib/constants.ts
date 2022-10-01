@@ -14,6 +14,12 @@ export const metadata: Metadata = {
 export const urls = {
     article:
         "https://www.rnz.co.nz/news/in-depth/474134/lotto-stores-in-poorest-half-of-nz-account-for-70-percent-of-sales",
-    license: "https://github.com/r1zyn/PowerballSimulation",
-    github: "https://github.com/r1zyn/PowerballSimulation"
+    license: "https://github.com/r1zyn/powerball-simulation",
+    github: "https://github.com/r1zyn/powerball-simulation",
+    nextjs: "https://nextjs.org/",
+    developer: "https://github.com/r1zyn",
+    sockt: "https://sockt.vercel.app/",
+    matrix: "https://matrixdev.xyz/",
+    protocon: "https://github.com/OfficialProtocon",
+    astura: "https://www.roblox.com/games/8430654040/Astura"
 };

@@ -4,7 +4,7 @@ import type { NextPage } from "next";
 import { Page } from "../components/Page";
 // import type { PowerballData } from "../lib/types";
 
-// import { getPowerballData } from "../lib/utils";
+import { scrollToElement } from "../lib/utils";
 import styles from "../styles/Home.module.css";
 import { urls } from "../lib/constants";
 import { useEffect } from "react";
@@ -80,17 +80,7 @@ const Home: NextPage = () => {
                         <div className={styles["button-spacer"]}>
                             <a
                                 className={styles["blue-btn"]}
-                                onClick={(): void => {
-                                    const simulationContainer: HTMLElement | null =
-                                        document.getElementById(
-                                            "simulation-container"
-                                        );
-                                    if (simulationContainer)
-                                        window.scrollTo({
-                                            top: simulationContainer.offsetTop,
-                                            behavior: "smooth"
-                                        });
-                                }}>
+                                onClick={(): void => scrollToElement("simulation-container")}>
                                 View Simulation{" "}
                             </a>
                         </div>
@@ -161,7 +151,6 @@ const Home: NextPage = () => {
                     data-aos-duration="3000">
                     <canvas id="lotto-ticket">
                         <div style={{ display: "none" }}>
-                            {/* eslint-disable-next-line @next/next/no-img-element */}
                             <img
                                 id="powerball-logo-two"
                                 src="/assets/YhT6DmCAzwyvoJLVCC1NJPvyPGZFINZ5.png"

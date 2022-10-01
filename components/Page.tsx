@@ -1,3 +1,4 @@
+import { Footer } from "./Footer";
 import { Fragment } from "react";
 import { Header } from "./Header";
 import { Meta, MetaProps } from "./Meta";
@@ -13,10 +14,9 @@ export const Page: NextComponent<PageProps> = (
     return (
         <Fragment>
             <Meta {...props} />
-
             <Header />
-
             <main className={styles.main}>{props.children}</main>
+            <Footer />
         </Fragment>
     );
 };
