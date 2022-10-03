@@ -69,7 +69,6 @@ a {
 
 ::-webkit-scrollbar {
     width: 10px;
-    cursor: pointer;
 }
 
 ::-webkit-scrollbar-track {
@@ -84,17 +83,6 @@ a {
     background: var(--scrollbar-bg);
     box-shadow: inset rgba(0, 0, 0, 0.2) 0 0 10000px;
 }
-
-/* @media (prefers-color-scheme: dark) {
-    html {
-        color-scheme: dark;
-    }
-
-    body {
-        color: white;
-        background: black;
-    }
-} */
 
 .hidden {
     opacity: 0;

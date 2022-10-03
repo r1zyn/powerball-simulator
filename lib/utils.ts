@@ -164,12 +164,22 @@ export function generateDivisions(
                         correct: true,
                         value: lottoNumbers[i][j]
                     });
+                } else {
+                    finalLottoNumbers[i].push({
+                        correct: false,
+                        value: lottoNumbers[i][j]
+                    });
                 }
             } else if (j === 6) {
                 if (lottoNumbers[i][j] == bonusball) {
                     hasBonusball = true;
                     finalLottoNumbers[i].push({
                         correct: true,
+                        value: lottoNumbers[i][j]
+                    });
+                } else {
+                    finalLottoNumbers[i].push({
+                        correct: false,
                         value: lottoNumbers[i][j]
                     });
                 }
@@ -180,12 +190,12 @@ export function generateDivisions(
                         correct: true,
                         value: lottoNumbers[i][j]
                     });
+                } else {
+                    finalLottoNumbers[i].push({
+                        correct: false,
+                        value: lottoNumbers[i][j]
+                    });
                 }
-            } else {
-                finalLottoNumbers[i].push({
-                    correct: false,
-                    value: lottoNumbers[i][j]
-                });
             }
         }
 
@@ -223,6 +233,8 @@ export function generateDivisions(
         hasBonusball = false;
         hasPowerball = false;
     }
+
+    console.log(finalLottoNumbers);
 
     return {
         finalLottoNumbers,

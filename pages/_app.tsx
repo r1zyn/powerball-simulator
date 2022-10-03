@@ -1,4 +1,5 @@
 import type { AppProps } from "next/app";
+import { Disclaimer } from "../components/Disclaimer";
 import { ScrollButton } from "../components/ScrollButton";
 import { ThemeProvider } from "next-themes";
 
@@ -16,6 +17,7 @@ function App({ Component, pageProps }: AppProps) {
     return (
         <ThemeProvider>
             <Component {...pageProps} />
+            <Disclaimer />
             <ScrollButton />
         </ThemeProvider>
     );

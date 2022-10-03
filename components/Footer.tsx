@@ -68,9 +68,10 @@ export const Footer: NextComponent = (): JSX.Element => {
                         <div>
                             <h4 className="fw5">Legal</h4>
                             <p>
-                                <Link href="/disclaimer" passHref>
-                                    <a rel="noopener noreferrer" target="_blank">Disclaimer</a>
-                                </Link>
+                                <a onClick={(): void => {
+                                    const disclaimerContainer: HTMLElement | null = document.getElementById("disclaimer-container");
+                                    if (disclaimerContainer) disclaimerContainer.style.display = "flex";
+                                }}>Disclaimer</a>
                             </p>
                         </div>
                     </div>
