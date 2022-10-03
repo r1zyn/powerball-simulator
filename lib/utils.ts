@@ -82,7 +82,7 @@ export function getMonth(): string {
 }
 
 /**
- * Scrolls the page to the element with the matchig id.
+ * Scrolls the page to the element with the matching id.
  * @param {string} id The id of the element 
  */
 export function scrollToElement(id: string): void {

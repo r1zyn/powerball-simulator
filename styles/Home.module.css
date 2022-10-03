@@ -349,6 +349,7 @@
     letter-spacing: -0.05rem;
     line-height: 1;
     width: 100%;
+    padding-right: 0.3rem;
 }
 
 .ticket-body {
