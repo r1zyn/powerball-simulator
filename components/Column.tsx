@@ -12,7 +12,10 @@ export const Column: NextComponent<ColumnProps> = (
     props: ColumnProps
 ): JSX.Element => {
     return (
-        <div className={styles["column"]} data-aos="fade-up" data-aos-duration="3000">
+        <div
+            className={styles["column"]}
+            data-aos="fade-up"
+            data-aos-duration="3000">
             <h1>{props.title}</h1>
             <p>{props.description}</p>
         </div>
