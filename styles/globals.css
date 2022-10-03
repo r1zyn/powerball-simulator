@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
 
 :root {
     --accents-1: #fafafa;
@@ -13,7 +14,7 @@
     --background: #ffffff;
     --theme-bg: var(--accents-2);
     --track-bg: #f1f1f1;
-    --scrollbar-bg: #fafafa;
+    --scrollbar-bg: #1a1a1a;
     --footer-bg: #fafafa;
     --footer-text: #666;
     --text-hover: #111;

@@ -1,5 +1,7 @@
 import { Metadata } from "./types";
 
+export const alphabets: string[] = "abcdefghijklmnopqrstuvwxyz".toUpperCase().split("").slice(0, 10);
+
 export const metadata: Metadata = {
     url:
         process.env.NODE_ENV === "production"
@@ -17,6 +19,7 @@ export const urls = {
     license: "https://github.com/r1zyn/powerball-simulation",
     github: "https://github.com/r1zyn/powerball-simulation",
     nextjs: "https://nextjs.org/",
+    nodejs: "https://nodejs.org/",
     developer: "https://github.com/r1zyn",
     sockt: "https://sockt.vercel.app/",
     matrix: "https://matrixdev.xyz/",

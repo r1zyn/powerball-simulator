@@ -38,4 +38,6 @@ export interface PowerballData {
     finalLottoNumbers: { correct: boolean; value: number }[][];
     totalWinnings: number;
     winningLine: number[];
+    bonusball: number;
+    powerball: number;
 }

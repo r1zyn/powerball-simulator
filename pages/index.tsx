@@ -1,58 +1,54 @@
-// import { Dispatch, SetStateAction, useEffect, useState } from "react";
+import { Dispatch, SetStateAction, useEffect, useState } from "react";
+import { Filler } from "../components/Filler";
+import JsBarcode from "jsbarcode";
 import { Link } from "../components/Next";
 import type { NextPage } from "next";
 import { Page } from "../components/Page";
-// import type { PowerballData } from "../lib/types";
+import type { PowerballData } from "../lib/types";
 
-import { scrollToElement } from "../lib/utils";
+import { alphabets, urls } from "../lib/constants";
+import { getDate, getDay, getPowerballData, randomNumber, scrollToElement } from "../lib/utils";
 import styles from "../styles/Home.module.css";
-import { urls } from "../lib/constants";
-import { useEffect } from "react";
 
 const Home: NextPage = () => {
-    // const [powerballData, setPowerballData]: [PowerballData | null, Dispatch<SetStateAction<PowerballData | null>>] = useState<PowerballData | null>(null);
+    const [lottoNumbers, setLottoNumbers]: [number[][], Dispatch<SetStateAction<number[][]>>] = useState<number[][]>([]);
+    const [finalLottoNumbers, setFinalLottoNumbers]: [{ correct: boolean; value: number; }[][], Dispatch<SetStateAction<{ correct: boolean; value: number; }[][]>>] = useState<{ correct: boolean; value: number; }[][]>([]);
+    const [winningLine, setWinningLine]: [number[], Dispatch<SetStateAction<number[]>>] = useState<number[]>([]);
+    const [bonusball, setBonusball]: [number, Dispatch<SetStateAction<number>>] = useState<number>(0);
+    const [powerball, setPowerball]: [number, Dispatch<SetStateAction<number>>] = useState<number>(0);
+    const [totalWinnings, setTotalWinnings]: [number, Dispatch<SetStateAction<number>>] = useState<number>(0);
+
+    const resetData = (): void => {
+        setLottoNumbers([]);
+        setFinalLottoNumbers([]);
+        setWinningLine([]);
+        setBonusball(0);
+        setPowerball(0);
+        setTotalWinnings(0);
+    };
 
     useEffect((): void => {
-        // const data: PowerballData = getPowerballData();
-        const canvas: HTMLCanvasElement | null = document.getElementById(
-            "lotto-ticket"
-        ) as HTMLCanvasElement | null;
+        const data: PowerballData = getPowerballData({
+            lottoNumbers: [],
+            finalLottoNumbers: [],
+            winningLine: [],
+            bonusball: 0,
+            powerball: 0,
+            totalWinnings: 0
+        });
 
-        if (canvas) {
-            const ctx: CanvasRenderingContext2D | null =
-                canvas.getContext("2d");
+        setLottoNumbers(data.lottoNumbers);
+        setFinalLottoNumbers(data.finalLottoNumbers);
+        setWinningLine(data.winningLine);
+        setBonusball(data.bonusball);
+        setPowerball(data.powerball);
+        setTotalWinnings(data.totalWinnings);
 
-            if (ctx) {
-                ctx.imageSmoothingEnabled = true;
-
-                ctx.fillStyle = "#FFE66D";
-                ctx.fillRect(50, 0, 220, canvas.height);
-
-                ctx.fillStyle = "#000000";
-                ctx.font = "15px Arial";
-                ctx.textAlign = "center";
-                ctx.fillText(
-                    "Generating...",
-                    canvas.width / 2,
-                    canvas.height / 2
-                );
-
-                // ctx.drawImage(document.getElementById("powerball-logo-two") as HTMLImageElement, 100, 0, 120, 30);
-
-                // for (const _row in data.lottoNumbers) {
-                //     for (const _col in data.lottoNumbers[_row]) {
-                //         const row = parseInt(_row);
-                //         const col = parseInt(_col);
-                //         ctx.fillRect(50 + (col * 40), 50 + (row * 40), 40, 40);
-                //         ctx.fillStyle = "#000000";
-                //         ctx.font = "30px Arial";
-                //         ctx.fillText(data.lottoNumbers[row][col].toString(), 70 + (col * 40), 80 + (row * 40));
-                //         ctx.fillStyle = "#FFE66D";
-                //     }
-                // }
-            }
-        }
-    });
+        JsBarcode("#barcode")
+            .options({ font: "OCR-B", height: 25, background: "transparent" })
+            .CODE128(randomNumber(0, 10000000000000).toString().padStart(12, "0"), { fontSize: 18, textMargin: 0, font: "", displayValue: false })
+            .render();
+    }, [setLottoNumbers]);
 
     return (
         <Page title="Powerball Simulation" description="">
@@ -143,22 +139,108 @@ const Home: NextPage = () => {
                         non proident, sunt in culpa qui officia deserunt mollit
                         anim id est laborum.
                     </p>
+
+                    <a
+                        className={styles["blue-btn"]}
+                        onClick={(): void => {
+                            resetData();
+
+                            const data: PowerballData = getPowerballData({
+                                lottoNumbers,
+                                finalLottoNumbers,
+                                winningLine,
+                                bonusball,
+                                powerball,
+                                totalWinnings
+                            });
+
+                            setLottoNumbers(data.lottoNumbers);
+                            setFinalLottoNumbers(data.finalLottoNumbers);
+                            setWinningLine(data.winningLine);
+                            setBonusball(data.bonusball);
+                            setPowerball(data.powerball);
+                            setTotalWinnings(data.totalWinnings);
+
+                            JsBarcode("#barcode")
+                                .options({ font: "OCR-B", height: 25, background: "transparent" })
+                                .CODE128(randomNumber(0, 10000000000000).toString().padStart(12, "0"), { fontSize: 18, textMargin: 0, font: "", displayValue: false })
+                                .render();
+                        }}>
+                        Run Simulation{" "}
+                    </a>
                 </div>
 
                 <div
                     className={styles.simulation}
                     data-aos="fade-up"
-                    data-aos-duration="3000">
-                    <canvas id="lotto-ticket">
-                        <div style={{ display: "none" }}>
-                            <img
-                                id="powerball-logo-two"
-                                src="/assets/YhT6DmCAzwyvoJLVCC1NJPvyPGZFINZ5.png"
-                                alt=""
-                                style={{ objectFit: "contain" }}
-                            />
+                    data-aos-duration="3000"
+                >
+                    <div className={styles["simulation-app"]} id="simulation-app">
+                        <div className={styles["ticket-header"]}>
+                            <span className={styles["ticket-logo"]}></span>
+                            <span>Power Dip</span>
                         </div>
-                    </canvas>
+
+                        <div className={styles["ticket-body"]}>
+                            <span className={styles["ticket-powerball"]}>
+                                Power
+                                <br />
+                                Ball
+                            </span>
+                            <span>{"=".repeat(48)}</span>
+                            {
+                                lottoNumbers.map((row: number[], i: number): JSX.Element => (
+                                    <div className={styles["ticket-row"]} key={i}>
+                                        {
+                                            row.map((col: number, j: number): JSX.Element => (
+                                                <div className={styles["ticket-col"]} key={j}>
+                                                    {j === 0 ?
+                                                        <div style={{
+                                                            display: "flex",
+                                                            flexDirection: "row",
+                                                            justifyContent: "center",
+                                                            alignItems: "center",
+                                                            columnGap: "1.5rem"
+                                                        }}>
+                                                            <span>{alphabets[i]}.</span>
+                                                            <span>{col.toString().padStart(2, "0")}</span>
+                                                        </div> :
+                                                        j === 6 ?
+                                                            `${col.toString().padStart(2, "0")} ┆` :
+                                                            col.toString().padStart(2, "0")}
+                                                </div>
+                                            ))
+                                        }
+                                    </div>
+                                ))
+                            }
+                            <span>{"=".repeat(48)}</span>
+                        </div>
+
+                        <div className={styles["ticket-info"]}>
+                            <div className={styles["ticket-info-col-left"]}>
+                                <span>Price</span>
+                                <span>Draw</span>
+                                <Filler />
+                                <Filler />
+                                <Filler />
+                                <span>RET {randomNumber(0, 10000000).toString().padStart(6, "0")}</span>
+                                <Filler />
+                            </div>
+
+                            <div className={styles["ticket-info-col-right"]}>
+                                <span>$15.00</span>
+                                <span>{randomNumber(0, 1000).toString().padStart(4, "0")}</span>
+                                <span>{getDay().slice(0, 3)}</span>
+                                <span>{getDate()}</span>
+                                <Filler />
+                                <span>{randomNumber(0, 1000).toString().padStart(3, "0")}-{randomNumber(0, 10000000000).toString().padStart(10, "0")}-{randomNumber(0, 10000).toString().padStart(4, "0")}</span>
+                                <Filler />
+                            </div>
+                        </div>
+
+                        <svg id="barcode" className={styles["ticket-barcode"]}></svg>
+                    </div>
                 </div>
             </div>
         </Page>
