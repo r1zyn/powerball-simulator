@@ -1,0 +1,39 @@
+{
+        "divisions": [
+        {
+            "division": 1,
+            "prize": "$25,111,111",
+            "description": "All 6 numbers and the powerball"
+        },
+        {
+            "division": 2,
+            "prize": "$35,771",
+            "description": "5 numbers and the bonus ball and the powerball"
+        },
+        {
+            "division": 3,
+            "prize": "$1,270",
+            "description": "5 numbers and the power ball"
+        },
+        {
+            "division": 4,
+            "prize": "$110",
+            "description": "4 numbers and the bonus ball and the powerball"
+        },
+        {
+            "division": 5,
+            "prize": "$55",
+            "description": "4 numbers and the powerball"
+        },
+        {
+            "division": 6,
+            "prize": "$41",
+            "description": "3 numbers and the bonus ball and the powerball"
+        },
+        {
+            "division": 7,
+            "prize": "$15",
+            "description": "3 numbers and the powerball (bonus ticket prize)"
+        }
+    ]
+}

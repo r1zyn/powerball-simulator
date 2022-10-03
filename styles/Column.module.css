@@ -1,0 +1,21 @@
+.column {
+    width: 50%;
+    padding: 4rem;
+    text-align: left;
+}
+
+.column>h1 {
+    font-weight: bold;
+    font-size: 24px;
+    letter-spacing: -.02em;
+    line-height: 1;
+    color: var(--accents-6);
+}
+
+.column>p {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.6;
+    letter-spacing: -.02em;
+    color: var(--accents-5);
+}

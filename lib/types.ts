@@ -2,10 +2,16 @@ import type { BaseContext } from "next/dist/shared/lib/utils";
 import type { CSSProperties } from "react";
 import type { NextComponentType } from "next";
 
-interface DefaultProps {
+export interface DefaultProps {
     className?: string;
     id?: string;
     style?: CSSProperties;
+}
+
+export interface Division {
+    division: number;
+    prize: string;
+    description: string;
 }
 
 export type EmptyObject = Record<string, never>;

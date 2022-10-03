@@ -1,0 +1,5 @@
+{
+    "About": "This site contains a Powerball simulation, based on the real Powerball, a lottery game played to earn cash prizes. The game is purely based on the luck of the player, and players can earn money from a range of cash based on their tickets. You can read more about how Powerball works by clicking on the 'Lotto' link at the bottom of the page.",
+    "How It Works": "This simulation is a close but not exact replica of the real Powerball game. The simulation will generate the tickets with 10 lines, and the winning numbers. The program will then highlight in red any numbers in the ticket that matches any of the winning numbers. Total earnings and winning numbers will also be displayed. You can generate a new ticket and winning numbers by pressing the \"Run Simulation\" button.",
+    "Divisions": "There are 7 divisions in this simulation. The following are listed below:"
+}

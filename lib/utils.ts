@@ -16,7 +16,10 @@ export function fileType(filename: string): string {
  */
 export function getDate(): string {
     const date: Date = new Date();
-    return `${date.getDate()} ${getMonth().slice(0, 3)} ${date.getFullYear().toString().slice(2, 4)}`;
+    return `${date.getDate()} ${getMonth().slice(0, 3)} ${date
+        .getFullYear()
+        .toString()
+        .slice(2, 4)}`;
 }
 
 /**
@@ -83,13 +86,10 @@ export function getMonth(): string {
 
 /**
  * Scrolls the page to the element with the matching id.
- * @param {string} id The id of the element 
+ * @param {string} id The id of the element
  */
 export function scrollToElement(id: string): void {
-    const element: HTMLElement | null =
-        document.getElementById(
-            id
-        );
+    const element: HTMLElement | null = document.getElementById(id);
 
     if (element)
         window.scrollTo({
@@ -102,11 +102,11 @@ export function scrollToElement(id: string): void {
  * Returns the lotto ticket numbers, final lotto ticket numbers, the winning line and total winnings.
  */
 export function getPowerballData(data: {
-    lottoNumbers: number[][],
-    finalLottoNumbers: { correct: boolean; value: number; }[][],
-    winningLine: number[],
-    totalWinnings: number,
-    bonusball: number,
+    lottoNumbers: number[][];
+    finalLottoNumbers: { correct: boolean; value: number }[][];
+    winningLine: number[];
+    totalWinnings: number;
+    bonusball: number;
     powerball: number;
 }): PowerballData {
     data.lottoNumbers = [];
@@ -118,12 +118,23 @@ export function getPowerballData(data: {
 
     data.lottoNumbers = generateNumbers(data.lottoNumbers);
 
-    const winningLineData = generateWinningLine(data.winningLine, data.bonusball, data.powerball);
+    const winningLineData = generateWinningLine(
+        data.winningLine,
+        data.bonusball,
+        data.powerball
+    );
     data.winningLine = winningLineData.winningLine;
     data.bonusball = winningLineData.bonusball;
     data.powerball = winningLineData.powerball;
 
-    const divisionData = generateDivisions(data.lottoNumbers, data.finalLottoNumbers, data.winningLine, data.totalWinnings, data.bonusball, data.powerball);
+    const divisionData = generateDivisions(
+        data.lottoNumbers,
+        data.finalLottoNumbers,
+        data.winningLine,
+        data.totalWinnings,
+        data.bonusball,
+        data.powerball
+    );
     data.finalLottoNumbers = divisionData.finalLottoNumbers;
     data.totalWinnings = divisionData.totalWinnings;
 
@@ -139,14 +150,14 @@ export function getPowerballData(data: {
 
 export function generateDivisions(
     lottoNumbers: number[][],
-    finalLottoNumbers: { correct: boolean; value: number; }[][],
+    finalLottoNumbers: { correct: boolean; value: number }[][],
     winningLine: number[],
     totalWinnings: number,
     bonusball: number,
     powerball: number
 ): {
-    finalLottoNumbers: { correct: boolean; value: number; }[][],
-    totalWinnings: number,
+    finalLottoNumbers: { correct: boolean; value: number }[][];
+    totalWinnings: number;
 } {
     const divisions: number[] = [0, 25111111, 35771, 1270, 110, 55, 41, 15];
 
@@ -234,8 +245,6 @@ export function generateDivisions(
         hasPowerball = false;
     }
 
-    console.log(finalLottoNumbers);
-
     return {
         finalLottoNumbers,
         totalWinnings
@@ -259,8 +268,8 @@ export function generateWinningLine(
     bonusball: number,
     powerball: number
 ): {
-    winningLine: number[],
-    bonusball: number,
+    winningLine: number[];
+    bonusball: number;
     powerball: number;
 } {
     for (let i = 0; i < 8; i++) {
