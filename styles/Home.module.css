@@ -289,7 +289,7 @@
     align-items: flex-start;
     flex-wrap: wrap;
     overflow: hidden;
-    background-color: var(--accents-1);
+    background-color: var(--simulation-bg);
 }
 
 .info {

@@ -21,6 +21,8 @@
     --github-hover: rgba(0, 118, 255, .1);
     --scroll-btn: black;
     --scroll-icon: white;
+    --column-text: var(--accents-6);
+    --simulation-bg: var(--accents-1);
 }
 
 [data-theme="dark"] {
@@ -35,6 +37,8 @@
     --github-hover: rgba(61, 146, 243, 0.342);
     --scroll-btn: white;
     --scroll-icon: black;
+    --column-text: white;
+    --simulation-bg: black;
 }
 
 html,
@@ -106,6 +110,7 @@ a {
     0% {
         opacity: 0;
     }
+
     100% {
         opacity: 1;
     }
@@ -115,6 +120,7 @@ a {
     0% {
         opacity: 1;
     }
+
     100% {
         opacity: 0;
     }
