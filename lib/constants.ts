@@ -8,7 +8,7 @@ export const alphabets: string[] = "abcdefghijklmnopqrstuvwxyz"
 export const metadata: Metadata = {
     url:
         process.env.NODE_ENV === "production"
-            ? "http://localhost:3000"
+            ? "https://r1zyn.github.io/powerball-simulator/"
             : "http://localhost:3000/",
     "theme-color": "#ffffff",
     image: "/assets/XJY3ZrAQqf5zCq3kZb6obQUF1grJp6k6.png",
