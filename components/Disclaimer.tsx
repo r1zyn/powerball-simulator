@@ -54,7 +54,7 @@ export const Disclaimer: NextComponent = (): JSX.Element => {
                     <br />
                     <br />
                     Links to Next.js, the GitHub repository and more are listed
-                    in the footer.
+                    in the footer. This site is not affiliated with Lotto NZ or any other organisation or group.
                 </p>
             </div>
         </div>

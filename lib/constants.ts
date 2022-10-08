@@ -11,8 +11,8 @@ export const metadata: Metadata = {
             ? "http://localhost:3000"
             : "http://localhost:3000/",
     "theme-color": "#ffffff",
-    image: "/favicon.ico",
-    icon: "/favicon.ico",
+    image: "/assets/XJY3ZrAQqf5zCq3kZb6obQUF1grJp6k6.png",
+    icon: "/assets/c7p3jjI2BFgGszRhVxRjtZdYDFeADlrt.png",
     keywords: ["lotto", "lottery", "powerball", "simulator"]
 };
 

@@ -10,6 +10,7 @@ import { Page } from "../components/Page";
 import { alphabets, urls } from "../lib/constants";
 import about from "../lib/data/about.json";
 import divisionData from "../lib/data/divisions.json";
+import metadata from "../lib/data/metadata.json";
 import {
     getDate,
     getDay,
@@ -81,7 +82,10 @@ const Home: NextPage = () => {
     }, [setLottoNumbers]);
 
     return (
-        <Page title="Powerball Simulation" description="">
+        <Page {...{
+            title: metadata.home.name,
+            description: metadata.home.description
+        }}>
             <div className={styles["header-container"]} id="header-container">
                 <div
                     className={styles["intro-container"]}
