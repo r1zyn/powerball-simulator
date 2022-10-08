@@ -1,6 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    basePath: "/powerball-simulator",
+    assetPrefix: process.env.NODE_ENV === "production" ? "/powerball-simulator" : "/",
+    basePath: process.env.NODE_ENV === "production" ? "/powerball-simulator" : "/",
     reactStrictMode: true,
     images: {
         unoptimized: true,
