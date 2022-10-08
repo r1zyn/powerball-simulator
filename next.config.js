@@ -1,6 +1,6 @@
-/** @type {import('next').NextConfig} */
+/** @type {import("next").NextConfig} */
 const nextConfig = {
-    assetPrefix: process.env.NODE_ENV === "production" ? "/powerball-simulator" : "/",
+    assetPrefix: process.env.NODE_ENV === "production" ? "https://r1zyn.github.io/powerball-simulator/" : "/",
     basePath: process.env.NODE_ENV === "production" ? "/powerball-simulator" : "/",
     reactStrictMode: true,
     images: {
