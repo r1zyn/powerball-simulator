@@ -237,14 +237,14 @@ const Home: NextPage = () => {
                         className={styles["simulation-app"]}
                         id="simulation-app">
                         <div className={styles["ticket-header"]}>
-                            <span className={styles["ticket-logo"]}></span>
+                            <span className={styles["ticket-logo"]} style={{
+                                background: `transparent url(${assetPath("/assets/aDJjbPvmi4eVWXii8JqwRDKUu8A2FlMF.png")}) no-repeat`
+                            }}></span>
                             <span>Power Dip</span>
                         </div>
 
                         <div className={styles["ticket-body"]}>
-                            <span className={styles["ticket-powerball"]} style={{
-                                background: `transparent url(${assetPath("/assets/aDJjbPvmi4eVWXii8JqwRDKUu8A2FlMF.png")}) no-repeat`
-                            }}>
+                            <span className={styles["ticket-powerball"]}>
                                 Power
                                 <br />
                                 Ball
