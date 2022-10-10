@@ -1,5 +1,7 @@
 import { Metadata } from "./types";
 
+import { assetPath } from "./utils";
+
 export const alphabets: string[] = "abcdefghijklmnopqrstuvwxyz"
     .toUpperCase()
     .split("")
@@ -11,8 +13,8 @@ export const metadata: Metadata = {
             ? "https://r1zyn.github.io/powerball-simulator/"
             : "http://localhost:3000/",
     "theme-color": "#ffffff",
-    image: "/assets/XJY3ZrAQqf5zCq3kZb6obQUF1grJp6k6.png",
-    icon: "/assets/c7p3jjI2BFgGszRhVxRjtZdYDFeADlrt.png",
+    image: assetPath("/assets/XJY3ZrAQqf5zCq3kZb6obQUF1grJp6k6.png"),
+    icon: assetPath("/assets/c7p3jjI2BFgGszRhVxRjtZdYDFeADlrt.png"),
     keywords: ["lotto", "lottery", "powerball", "simulator"]
 };
 

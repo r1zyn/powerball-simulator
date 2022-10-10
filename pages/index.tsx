@@ -9,15 +9,16 @@ import { Page } from "../components/Page";
 
 import { alphabets, urls } from "../lib/constants";
 import about from "../lib/data/about.json";
-import divisionData from "../lib/data/divisions.json";
-import metadata from "../lib/data/metadata.json";
 import {
+    assetPath,
     getDate,
     getDay,
     getPowerballData,
     randomNumber,
     scrollToElement
 } from "../lib/utils";
+import divisionData from "../lib/data/divisions.json";
+import metadata from "../lib/data/metadata.json";
 import styles from "../styles/Home.module.css";
 
 const Home: NextPage = () => {
@@ -241,7 +242,9 @@ const Home: NextPage = () => {
                         </div>
 
                         <div className={styles["ticket-body"]}>
-                            <span className={styles["ticket-powerball"]}>
+                            <span className={styles["ticket-powerball"]} style={{
+                                background: `transparent url(${assetPath("/assets/aDJjbPvmi4eVWXii8JqwRDKUu8A2FlMF.png")}) no-repeat`
+                            }}>
                                 Power
                                 <br />
                                 Ball

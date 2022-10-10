@@ -1,9 +1,16 @@
 import type { PowerballData } from "../lib/types";
 
 /**
+ * Inserts the powerball simulator base path into assets under the assets folder
+ * @param {string} path The original path of the file 
+ */
+export function assetPath(path: string): string {
+    return process.env.NODE_ENV === "production" ? `/powerball-simulator${path}` : path;
+}
+
+/**
  * Matches the file type of a file when given the file name.
  * @param {string} filename The file name
- * @returns
  */
 export function fileType(filename: string): string {
     const match: RegExpMatchArray | null = filename.match(/(\.[a-z]{3,})$/g);
