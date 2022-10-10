@@ -239,7 +239,7 @@ const Home: NextPage = () => {
                         <div className={styles["ticket-header"]}>
                             <span className={styles["ticket-logo"]} style={{
                                 background: `transparent url(${assetPath("/assets/aDJjbPvmi4eVWXii8JqwRDKUu8A2FlMF.png")}) no-repeat`,
-                                backgroundPosition: "241.0582px -287.4709px",
+                                backgroundPosition: "-241.0582px -287.4709px",
                                 backgroundSize: "1431.95767px 1596.02116px"
                             }}></span>
                             <span>Power Dip</span>
