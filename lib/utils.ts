@@ -262,8 +262,18 @@ export function generateNumbers(lottoNumbers: number[][]): number[][] {
     for (let i = 0; i < 10; i++) {
         lottoNumbers.push([]);
         for (let j = 0; j < 8; j++) {
-            if (j < 7) lottoNumbers[i].push(randomNumber(1, 41));
-            if (j === 7) lottoNumbers[i].push(randomNumber(1, 10));
+            if (j < 7) {
+                let random: number = randomNumber(1, 41);
+
+                while (lottoNumbers[i].includes(random)) random = randomNumber(1, 41);
+                lottoNumbers[i].push(random);
+            }
+            if (j === 7) {
+                let random: number = randomNumber(1, 10);
+
+                while (lottoNumbers[i].includes(random)) random = randomNumber(1, 10);
+                lottoNumbers[i].push(random);
+            }
         }
     }
 
@@ -280,8 +290,18 @@ export function generateWinningLine(
     powerball: number;
 } {
     for (let i = 0; i < 8; i++) {
-        if (i < 7) winningLine[i] = randomNumber(1, 41);
-        else if (i === 7) winningLine[i] = randomNumber(1, 10);
+        if (i < 7) {
+            let random: number = randomNumber(1, 41);
+            
+            while (winningLine.includes(random)) random = randomNumber(1, 41);
+            winningLine[i] = random;
+        }
+        else if (i === 7) {
+            let random: number = randomNumber(1, 10);
+
+            while (winningLine.includes(random)) random = randomNumber(1, 10);
+            winningLine[i] = random;
+        }
     }
 
     bonusball = winningLine[6];
