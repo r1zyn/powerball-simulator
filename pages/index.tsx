@@ -27,9 +27,9 @@ const Home: NextPage = (): JSX.Element => {
         Dispatch<SetStateAction<number[][]>>
     ] = useState<number[][]>([]);
     const [finalLottoNumbers, setFinalLottoNumbers]: [
-        { correct: boolean; value: number; }[][],
-        Dispatch<SetStateAction<{ correct: boolean; value: number; }[][]>>
-    ] = useState<{ correct: boolean; value: number; }[][]>([]);
+        { correct: boolean; value: number }[][],
+        Dispatch<SetStateAction<{ correct: boolean; value: number }[][]>>
+    ] = useState<{ correct: boolean; value: number }[][]>([]);
     const [winningLine, setWinningLine]: [
         number[],
         Dispatch<SetStateAction<number[]>>
@@ -83,10 +83,11 @@ const Home: NextPage = (): JSX.Element => {
     }, [setLottoNumbers]);
 
     return (
-        <Page {...{
-            title: metadata.home.name,
-            description: metadata.home.description
-        }}>
+        <Page
+            {...{
+                title: metadata.home.name,
+                description: metadata.home.description
+            }}>
             <div className={styles["header-container"]} id="header-container">
                 <div
                     className={styles["intro-container"]}
@@ -237,11 +238,16 @@ const Home: NextPage = (): JSX.Element => {
                         className={styles["simulation-app"]}
                         id="simulation-app">
                         <div className={styles["ticket-header"]}>
-                            <span className={styles["ticket-logo"]} style={{
-                                background: `transparent url(${assetPath("/assets/aDJjbPvmi4eVWXii8JqwRDKUu8A2FlMF.png")}) no-repeat`,
-                                backgroundPosition: "-241.0582px -287.4709px",
-                                backgroundSize: "1431.95767px 1596.02116px"
-                            }}></span>
+                            <span
+                                className={styles["ticket-logo"]}
+                                style={{
+                                    background: `transparent url(${assetPath(
+                                        "/assets/aDJjbPvmi4eVWXii8JqwRDKUu8A2FlMF.png"
+                                    )}) no-repeat`,
+                                    backgroundPosition:
+                                        "-241.0582px -287.4709px",
+                                    backgroundSize: "1431.95767px 1596.02116px"
+                                }}></span>
                             <span>Power Dip</span>
                         </div>
 
@@ -418,13 +424,11 @@ const Home: NextPage = (): JSX.Element => {
                 {Object.keys(about).map(
                     (key: string, i: number): JSX.Element =>
                         i < 2 ? (
-                                <Column
-                                    title={key}
-                                    description={
-                                        about[key as keyof typeof about]
-                                    }
-                                    key={i}
-                                />
+                            <Column
+                                title={key}
+                                description={about[key as keyof typeof about]}
+                                key={i}
+                            />
                         ) : (
                             <Column
                                 title={key}

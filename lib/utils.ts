@@ -2,10 +2,12 @@ import type { PowerballData } from "../lib/types";
 
 /**
  * Inserts the powerball simulator base path into assets under the assets folder
- * @param {string} path The original path of the file 
+ * @param {string} path The original path of the file
  */
 export function assetPath(path: string): string {
-    return process.env.NODE_ENV === "production" ? `/powerball-simulator${path}` : path;
+    return process.env.NODE_ENV === "production"
+        ? `/powerball-simulator${path}`
+        : path;
 }
 
 /**
@@ -265,13 +267,15 @@ export function generateNumbers(lottoNumbers: number[][]): number[][] {
             if (j < 7) {
                 let random: number = randomNumber(1, 41);
 
-                while (lottoNumbers[i].includes(random)) random = randomNumber(1, 41);
+                while (lottoNumbers[i].includes(random))
+                    random = randomNumber(1, 41);
                 lottoNumbers[i].push(random);
             }
             if (j === 7) {
                 let random: number = randomNumber(1, 10);
 
-                while (lottoNumbers[i].includes(random)) random = randomNumber(1, 10);
+                while (lottoNumbers[i].includes(random))
+                    random = randomNumber(1, 10);
                 lottoNumbers[i].push(random);
             }
         }
@@ -292,11 +296,10 @@ export function generateWinningLine(
     for (let i = 0; i < 8; i++) {
         if (i < 7) {
             let random: number = randomNumber(1, 41);
-            
+
             while (winningLine.includes(random)) random = randomNumber(1, 41);
             winningLine[i] = random;
-        }
-        else if (i === 7) {
+        } else if (i === 7) {
             let random: number = randomNumber(1, 10);
 
             while (winningLine.includes(random)) random = randomNumber(1, 10);

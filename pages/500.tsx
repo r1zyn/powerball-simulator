@@ -10,18 +10,25 @@ const Error500: NextPage = (): JSX.Element => {
 
     return (
         <>
-            <Meta title={`Error ${statusCode} - ${errorMessage.replace(".", "")}`} description={errorMessage} />
+            <Meta
+                title={`Error ${statusCode} - ${errorMessage.replace(".", "")}`}
+                description={errorMessage}
+            />
 
             <div className={styles["error-container"]}>
                 <div>
                     <h1 className={styles["error-code"]}>{statusCode}</h1>
                     <div className={styles["error-divider"]}>
-                        <h1 className={styles["error-message"]}>{errorMessage}</h1>
+                        <h1 className={styles["error-message"]}>
+                            {errorMessage}
+                        </h1>
                     </div>
                 </div>
 
                 <Link href="/">
-                    <span className={styles["return-link"]}>Return to home</span>
+                    <span className={styles["return-link"]}>
+                        Return to home
+                    </span>
                 </Link>
             </div>
         </>
