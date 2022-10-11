@@ -2,7 +2,7 @@ import { Link } from "../components/Next";
 import { Meta } from "../components/Meta";
 import type { NextPage } from "next";
 
-import styles from "../styles/404.module.css";
+import styles from "../styles/Error.module.css";
 
 const Error404: NextPage = (): JSX.Element => {
     const statusCode = 404;
@@ -11,7 +11,7 @@ const Error404: NextPage = (): JSX.Element => {
     return (
         <>
             <Meta title={`Error ${statusCode} - ${errorMessage.replace(".", "")}`} description={errorMessage} />
-        
+
             <div className={styles["error-container"]}>
                 <div>
                     <h1 className={styles["error-code"]}>{statusCode}</h1>

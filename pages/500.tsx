@@ -2,7 +2,7 @@ import { Link } from "../components/Next";
 import { Meta } from "../components/Meta";
 import type { NextPage } from "next";
 
-import styles from "../styles/404.module.css";
+import styles from "../styles/Error.module.css";
 
 const Error500: NextPage = (): JSX.Element => {
     const statusCode = 500;
