@@ -21,7 +21,7 @@ import divisionData from "../lib/data/divisions.json";
 import metadata from "../lib/data/metadata.json";
 import styles from "../styles/Home.module.css";
 
-const Home: NextPage = () => {
+const Home: NextPage = (): JSX.Element => {
     const [lottoNumbers, setLottoNumbers]: [
         number[][],
         Dispatch<SetStateAction<number[][]>>
@@ -418,7 +418,6 @@ const Home: NextPage = () => {
                 {Object.keys(about).map(
                     (key: string, i: number): JSX.Element =>
                         i < 2 ? (
-                            <>
                                 <Column
                                     title={key}
                                     description={
@@ -426,7 +425,6 @@ const Home: NextPage = () => {
                                     }
                                     key={i}
                                 />
-                            </>
                         ) : (
                             <Column
                                 title={key}

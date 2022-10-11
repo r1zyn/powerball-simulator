@@ -9,7 +9,7 @@ import { useEffect } from "react";
 import "aos/dist/aos.css";
 import "../styles/globals.css";
 
-function App({ Component, pageProps }: AppProps) {
+function App({ Component, pageProps }: AppProps): JSX.Element {
     useEffect((): void => {
         init();
     });
