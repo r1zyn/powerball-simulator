@@ -1,19 +1,17 @@
-import type { ErrorProps } from "next/error";
 import { Link } from "../components/Next";
-import type { NextPageContext } from "next";
+import { Meta } from "../components/Meta";
+import type { NextPage } from "next";
 
 import styles from "../styles/404.module.css";
-import { Meta } from "../components/Meta";
 
-function Error({ statusCode }: ErrorProps): JSX.Element {
-    const errorMessage: string = statusCode ?
-        statusCode === 404 ? "This page could not be found." : "An internal error occurred." :
-        "An error occurred on the client.";
+const Error404: NextPage = (): JSX.Element => {
+    const statusCode = 404;
+    const errorMessage = "This page could not be found."
 
     return (
         <>
             <Meta title={`Error ${statusCode} - ${errorMessage.replace(".", "")}`} description={errorMessage} />
-
+        
             <div className={styles["error-container"]}>
                 <div>
                     <h1 className={styles["error-code"]}>{statusCode}</h1>
@@ -30,9 +28,4 @@ function Error({ statusCode }: ErrorProps): JSX.Element {
     );
 }
 
-Error.getInitialProps = ({ res, err }: NextPageContext): ErrorProps => {
-    const statusCode: number = res ? res.statusCode : err && err.statusCode ? err.statusCode : 404;
-    return { statusCode };
-};
-
-export default Error;
+export default Error404;
