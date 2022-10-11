@@ -1,13 +1,23 @@
 <div align="center">
     <h1>Powerball Simulator</h1>
     <div>
-        <img src="https://img.shields.io/github/issues/r1zyn/powerball-simulator?logo=github&style=for-the-badge" alt="Issues" />
-        <img src="https://img.shields.io/github/commit-activity/m/r1zyn/powerball-simulator?color=yellow&logo=github&style=for-the-badge" alt="Commit activity">
-        <img src="https://img.shields.io/github/workflow/status/r1zyn/powerball-simulator/pages-build-deployment?logo=github&style=for-the-badge" alt="Workflow status">
-        <img src="https://img.shields.io/github/languages/top/r1zyn/powerball-simulator?logo=typescript&style=for-the-badge" alt="Top language" />
+        <a href="https://github.com/r1zyn/powerball-simulator/issues">
+            <img src="https://img.shields.io/github/issues/r1zyn/powerball-simulator?logo=github&style=for-the-badge" alt="Issues" />
+        </a>
+        <a href="https://github.com/r1zyn/powerball-simulator/commits/master">
+            <img src="https://img.shields.io/github/commit-activity/m/r1zyn/powerball-simulator?color=yellow&logo=github&style=for-the-badge" alt="Commit activity">
+        </a>
+        <a href="https://github.com/r1zyn/powerball-simulator/actions/workflows/pages/pages-build-deployment">
+            <img src="https://img.shields.io/github/workflow/status/r1zyn/powerball-simulator/pages%20build%20and%20deployment?logo=github&style=for-the-badge" alt="Workflow status">
+        </a>
+        <a href="https://github.com/r1zyn/powerball-simulator/search?l=typescript">
+            <img src="https://img.shields.io/github/languages/top/r1zyn/powerball-simulator?logo=typescript&style=for-the-badge" alt="Top language" />
+        </a>
     </div>
-    <hr />
 </div>
+
+<br />
+<br />
 
 ### About
 
