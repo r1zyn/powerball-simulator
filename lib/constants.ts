@@ -2,11 +2,17 @@ import { Metadata } from "./types";
 
 import { assetPath } from "./utils";
 
+/**
+ * Alphabets for identifying ticket lines.
+ */
 export const alphabets: string[] = "abcdefghijklmnopqrstuvwxyz"
     .toUpperCase()
     .split("")
     .slice(0, 10);
 
+/**
+ * The default metadata for the site.
+ */
 export const metadata: Metadata = {
     url:
         process.env.NODE_ENV === "production"
@@ -18,6 +24,9 @@ export const metadata: Metadata = {
     keywords: ["lotto", "lottery", "powerball", "simulator"]
 };
 
+/**
+ * URL constants.
+ */
 export const urls = {
     article:
         "https://www.rnz.co.nz/news/in-depth/474134/lotto-stores-in-poorest-half-of-nz-account-for-70-percent-of-sales",

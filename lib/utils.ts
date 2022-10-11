@@ -3,6 +3,7 @@ import type { PowerballData } from "../lib/types";
 /**
  * Inserts the powerball simulator base path into assets under the assets folder
  * @param {string} path The original path of the file
+ * @returns
  */
 export function assetPath(path: string): string {
     return process.env.NODE_ENV === "production"
@@ -13,6 +14,7 @@ export function assetPath(path: string): string {
 /**
  * Matches the file type of a file when given the file name.
  * @param {string} filename The file name
+ * @returns
  */
 export function fileType(filename: string): string {
     const match: RegExpMatchArray | null = filename.match(/(\.[a-z]{3,})$/g);
@@ -22,6 +24,7 @@ export function fileType(filename: string): string {
 
 /**
  * Returns the current date as a string.
+ * @returns
  */
 export function getDate(): string {
     const date: Date = new Date();
@@ -33,6 +36,7 @@ export function getDate(): string {
 
 /**
  * Returns the current day as a string.
+ * @returns
  */
 export function getDay(): string {
     const day: number = new Date().getDay();
@@ -59,6 +63,7 @@ export function getDay(): string {
 
 /**
  * Returns the current month as a string.
+ * @returns
  */
 export function getMonth(): string {
     const month: number = new Date().getMonth();
@@ -109,15 +114,10 @@ export function scrollToElement(id: string): void {
 
 /**
  * Returns the lotto ticket numbers, final lotto ticket numbers, the winning line and total winnings.
+ * @param {PowerballData} data Powerball data initialisation
+ * @returns 
  */
-export function getPowerballData(data: {
-    lottoNumbers: number[][];
-    finalLottoNumbers: { correct: boolean; value: number }[][];
-    winningLine: number[];
-    totalWinnings: number;
-    bonusball: number;
-    powerball: number;
-}): PowerballData {
+export function getPowerballData(data: PowerballData): PowerballData {
     data.lottoNumbers = [];
     data.finalLottoNumbers = [];
     data.winningLine = [];
@@ -157,6 +157,16 @@ export function getPowerballData(data: {
     };
 }
 
+/**
+ * Generates the divisions.
+ * @param {number[][]} lottoNumbers 2D array for ticket rows and columns
+ * @param {number[][]} finalLottoNumbers 2D array for ticket rows and columns with correct and non-correct values
+ * @param {number[]} winningLine Array containing the winning line numbers
+ * @param {number} totalWinnings Total amount of winnings
+ * @param {number} bonusball Value of the bonusball 
+ * @param {number} powerball Value of the powerball
+ * @returns 
+ */
 export function generateDivisions(
     lottoNumbers: number[][],
     finalLottoNumbers: { correct: boolean; value: number }[][],
@@ -260,6 +270,11 @@ export function generateDivisions(
     };
 }
 
+/**
+ * Generates the random numbers for the lotto ticket.
+ * @param {number[][]} lottoNumbers 2D array for ticket rows and columns
+ * @returns 
+ */
 export function generateNumbers(lottoNumbers: number[][]): number[][] {
     for (let i = 0; i < 10; i++) {
         lottoNumbers.push([]);
@@ -284,6 +299,13 @@ export function generateNumbers(lottoNumbers: number[][]): number[][] {
     return lottoNumbers;
 }
 
+/**
+ * Generates the numbers for the winning line.
+ * @param {number[]} winningLine Array containing the winning line numbers
+ * @param {number} bonusball Value of the bonusball 
+ * @param {number} powerball Value of the powerball
+ * @returns 
+ */
 export function generateWinningLine(
     winningLine: number[],
     bonusball: number,
@@ -317,6 +339,13 @@ export function generateWinningLine(
     };
 }
 
+
+/**
+ * Generates a random number between the `min` value (inclusive) and the `max` value (exclusive)
+ * @param {number} min Minimum value (inclusive) 
+ * @param {number} max Maximum value (exlusive)
+ * @returns 
+ */
 export function randomNumber(min: number, max: number): number {
     return Math.floor(Math.random() * (max - min) + min);
 }
