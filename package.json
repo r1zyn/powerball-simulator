@@ -1,7 +1,8 @@
 {
     "name": "powerballsimulator",
-    "version": "0.1.0",
-    "private": true,
+    "description": "Powerball simulator to simulate chances of winning.",
+    "version": "1.0.0",
+    "private": false,
     "scripts": {
         "dev": "next dev",
         "build": "next build && next export",
@@ -10,6 +11,19 @@
         "lint": "next lint",
         "fmt": "prettier --write **/*.{js,ts,jsx,tsx,json}"
     },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/r1zyn/powerball-simulator"
+    },
+    "bugs": {
+        "url": "https://github.com/r1zyn/powerball-simulator/issues"
+    },
+    "author": {
+        "name": "r1zyn",
+        "url": "https://github.com/r1zyn"
+    },
+    "keywords": ["lotto", "lottery", "powerball", "simulator"],
+    "license": "Unlicense",
     "dependencies": {
         "@fortawesome/fontawesome-svg-core": "^6.2.0",
         "@fortawesome/free-solid-svg-icons": "^6.2.0",
