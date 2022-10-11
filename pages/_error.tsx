@@ -3,6 +3,7 @@ import { Link } from "../components/Next";
 import type { NextPageContext } from "next";
 
 import styles from "../styles/404.module.css";
+import { Meta } from "../components/Meta";
 
 function Error({ statusCode }: ErrorProps): JSX.Element {
     const errorMessage: string = statusCode ?
@@ -10,18 +11,22 @@ function Error({ statusCode }: ErrorProps): JSX.Element {
         "An error occurred on the client.";
 
     return (
-        <div className={styles["error-container"]}>
-            <div>
-                <h1 className={styles["error-code"]}>{statusCode}</h1>
-                <div className={styles["error-divider"]}>
-                    <h1 className={styles["error-message"]}>{errorMessage}</h1>
-                </div>
-            </div>
+        <>
+            <Meta title={`Error ${statusCode} - ${errorMessage.replace(".", "")}`} description={errorMessage} />
 
-            <Link href="/">
-                <span className={styles["return-link"]}>Return to home</span>
+            <div className={styles["error-container"]}>
+                <div>
+                    <h1 className={styles["error-code"]}>{statusCode}</h1>
+                    <div className={styles["error-divider"]}>
+                        <h1 className={styles["error-message"]}>{errorMessage}</h1>
+                    </div>
+                </div>
+
+                <Link href="/">
+                    <span className={styles["return-link"]}>Return to home</span>
                 </Link>
-        </div>
+            </div>
+        </>
     );
 }
 
